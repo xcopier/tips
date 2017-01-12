@@ -12,3 +12,21 @@ extension Sequence {
 	}
 }
 ```
+## reduce
+使用reduce实现map和filter
+```swift
+extension Array {
+	func map2<T>(_ transform: (Element) -> T) -> [T] {
+		return self.reduce([]) { $0 + [transform($1)] }
+	}
+}
+```
+```swift
+extension Array {
+	func filter2(_ isIncluded: (Element) -> Bool) -> [Element] {
+		return self.reduce([]) {
+			isIncluded($1) ? $0 + [$1] : $0
+		}
+	}
+}
+```
