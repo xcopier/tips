@@ -30,3 +30,13 @@ extension Array {
 	}
 }
 ```
+## flapMap
+为了得到两个数组中元素的所有配对组合，可以对其中一个数组进行flapMap,
+然后对另一个进行map操作:
+```swift
+let suits = ["♠︎","♥︎","♣︎","♦︎"]
+let ranks = ["J","Q","K","A"]
+let allCombinations = suits.flatMap { suit in
+	return ranks.map{ (suit, $0) }
+}
+```
