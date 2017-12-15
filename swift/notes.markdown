@@ -17,3 +17,8 @@ extension Dictionary {
 	}
 }
 ```
+
+```
+let defaultAlarms = (1..<5).map { (key: "Alarm \($0)", value: false) }
+let alarmsDictionary = Dictionary(defaultAlarms)
+```
